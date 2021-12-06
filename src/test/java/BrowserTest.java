@@ -17,10 +17,22 @@ public class BrowserTest {
 	//WebDriver driver = new FirefoxDriver();
 	WebDriver driver = new ChromeDriver();
 	
+	//Navigate to wanted page
 	driver.get("http://google.com/");
+	
+	//Wait a little bit. I know that is not correct but I needed it for now. 
+	//Will be removed soon
+	Thread.sleep(3000);
+	
+	//Find the pop-up, click on it to remove it
+	driver.findElement(By.id("L2AGLb")).click();
+	System.out.println("I have found the button and removed it");
+	
+	//Find another element and send keys	
 	WebElement textBox = driver.findElement(By.id("lst-ib"));
 	textBox.sendKeys("Raz dwa trzy");
 	
+	//Little pause
 	Thread.sleep(3000);
 	
 }
