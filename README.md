@@ -9,6 +9,8 @@ Build tool - Maven 3.8.4
 
 Unit tests: TestNG, JUnit 4.13.2
 
+Logging: log4j 2.17.1
+
 Code reveiws: Github
 
 Version control system: GIT 2.34.1
