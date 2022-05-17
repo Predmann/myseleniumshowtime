@@ -12,7 +12,7 @@ public class ExcelUtils {
 		try {
 			
 			workbook = new XSSFWorkbook(excelPath);
-			sheet  = workbook.getSheet(sheetName);
+			sheet = workbook.getSheet(sheetName);
 		}
 		catch(Exception e) {
 			e.printStackTrace();
@@ -23,20 +23,46 @@ public class ExcelUtils {
 	public static void main(String[] args) {
 		//getRowCount();
 		getCellDataString(0,0);
-		getCellDataNumber(1,1);
+		getCellDataNumber(0,0);
 	}
 
-	public static void getRowCount() {
-
-		int rowCount = sheet.getPhysicalNumberOfRows();
-		System.out.println("No of rows: "+ rowCount);
+	public static int getRowCount() {
+		int rowCount=0;
+		
+		try {
+			rowCount = sheet.getPhysicalNumberOfRows();
+			System.out.println("No of rows: "+ rowCount);
+		
+		}
+		catch(Exception exp) {
+				System.out.println(exp.getMessage());
+				System.out.println(exp.getCause());
+				exp.printStackTrace();
+		}
+		return rowCount;
 	}
 
+	public static int getColCount() {
+		int colCount=0;
+		try {
+			colCount = sheet.getRow(0).getPhysicalNumberOfCells();
+			System.out.println("No of rows: "+ colCount);
+		}
+		catch(Exception exp) {
+			System.out.println(exp.getMessage());
+			System.out.println(exp.getCause());
+			exp.printStackTrace();
+			
+		}
+		return colCount;
+	
+	}
 
-	public static void getCellDataString(int rowNum, int colNum) {
+	public static String getCellDataString(int rowNum, int colNum) {
+		String cellData=null;
 		try {
 
-			String cellData = sheet.getRow(rowNum).getCell(colNum).getStringCellValue();
+			cellData = sheet.getRow(rowNum).getCell(colNum).getStringCellValue();
 			System.out.println(cellData);
 
 		}
@@ -45,6 +71,7 @@ public class ExcelUtils {
 			System.out.println(exp.getCause());
 			exp.printStackTrace();
 		}
+		return cellData;
 	}
 	public static void getCellDataNumber(int rowNum, int colNum) {
 		try {
