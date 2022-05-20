@@ -1,22 +1,47 @@
 package utils;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import config.PropertiesFile;
+
 public class ExcelDataProvider {
-	
-	@Test(dataProvider="test1data")
-	public void test1(String username, String password) {
-		System.out.println(username+ " | "+password);
+
+	static WebDriver driver = null;
+
+	@BeforeTest
+	public void setUpTest() {
+		String projectPath = System.getProperty("user.dir");
+		PropertiesFile.getProperties();
+
+		System.setProperty("webdriver.chrome.driver", projectPath + "/drivers/chromedriver/chromedriver.exe");
+		driver = new ChromeDriver();
+
+	}
+
+	@Test(dataProvider = "test1data")
+	public void test1(String username, String password) throws Exception {
+		System.out.println(username + " | " + password);
+		
+		driver.get("https://opensource-demo.orangehrmlive.com/");
+		Thread.sleep(2000);
+		driver.findElement(By.id("txtUsername")).sendKeys(username);
+		driver.findElement(By.id("txtPassword")).sendKeys(password);
+		Thread.sleep(2000);
 	}
 
 	@DataProvider(name = "test1data")
 	public Object[][] getData() {
 		String excelPath = "D:\\workspace\\myseleniumshowtime\\excel\\data.xlsx";
-		
-				Object data[][] = testData(excelPath, "Sheet1");
+
+		Object data[][] = testData(excelPath, "Sheet1");
 		return data;
-		
+
 	}
 
 	public static Object[][] testData(String excelPath, String sheetName) {
@@ -32,7 +57,7 @@ public class ExcelDataProvider {
 			for (int j = 0; j < colCount; j++) {
 
 				String cellData = excel.getCellDataString(i, j);
-				System.out.print(cellData + " | ");
+				// System.out.print(cellData + " | ");
 				data[i - 1][j] = cellData;
 
 			}
