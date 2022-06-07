@@ -31,36 +31,100 @@ div.shootout {padding:2em;border:3px #4854A8 solid}
 <body>
 <table cellspacing="0" cellpadding="0" class="result">
 <tr><th>Test</th><th class="numi">Methods<br/>Passed</th><th class="numi">Scenarios<br/>Passed</th><th class="numi"># skipped</th><th class="numi"># failed</th><th class="numi">Total<br/>Time</th><th class="numi">Included<br/>Groups</th><th class="numi">Excluded<br/>Groups</th></tr>
-<tr><td style="text-align:left;padding-right:2em">Default test</td><td class="numi">3</td><td class="numi">3</td><td class="numi">0</td><td class="numi">0</td><td class="numi">18,9 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+<tr><td style="text-align:left;padding-right:2em">Test</td><td class="numi">3</td><td class="numi">3</td><td class="numi_attn">2</td><td class="numi_attn">1</td><td class="numi">1,3 seconds</td><td class="numi"></td><td class="numi"></td></tr>
 </table>
 <table cellspacing="0" cellpadding="0" class="passed" id="summary">
 <tr><th>Class</th><th>Method</th><th># of<br/>Scenarios</th><th>Start</th><th>Time<br/>(ms)</th></tr>
-<tr><th colspan="4">Default test &#8212; passed</th></tr>
-<tr class="passedodd"><td rowspan="3">utils.ExcelDataProvider</td><td><a href="#m1"><b>test1</b>  </a></td><td class="numi">3</td><td>1653057428953</td><td class="numi">17167</td></tr><tr class="passedodd"><td><a href="#m2"><b>test1</b>  </a></td><td class="numi">3</td><td>1653057428953</td><td class="numi">17167</td></tr><tr class="passedodd"><td><a href="#m3"><b>test1</b>  </a></td><td class="numi">3</td><td>1653057428953</td><td class="numi">17167</td></tr>
+<tr><th colspan="4">Test &#8212; failed</th></tr>
+<tr class="failedodd"><td rowspan="1">listeners.TestNGListenerDemo</td><td><a href="#m1"><b>test2</b>  </a></td><td class="numi">1</td><td>1654612399162</td><td class="numi">1245</td></tr>
+<tr><th colspan="4">Test &#8212; skipped</th></tr>
+<tr class="skippedodd"><td rowspan="1">listeners.TestNGListenerDemo</td><td><a href="#m2"><b>test3</b>  </a></td><td class="numi">1</td><td>1654612400411</td><td class="numi">1</td></tr>
+<tr class="skippedeven"><td rowspan="1">listeners.TestNGListenerDemo2</td><td><a href="#m3"><b>test6</b>  </a></td><td class="numi">1</td><td>1654612400415</td><td class="numi">1</td></tr>
+<tr><th colspan="4">Test &#8212; passed</th></tr>
+<tr class="passedodd"><td rowspan="1">listeners.TestNGListenerDemo</td><td><a href="#m4"><b>test1</b>  </a></td><td class="numi">1</td><td>1654612399156</td><td class="numi">5</td></tr>
+<tr class="passedeven"><td rowspan="2">listeners.TestNGListenerDemo2</td><td><a href="#m5"><b>test4</b>  </a></td><td class="numi">1</td><td>1654612400413</td><td class="numi">1</td></tr><tr class="passedeven"><td><a href="#m6"><b>test5</b>  </a></td><td class="numi">1</td><td>1654612400414</td><td class="numi">1</td></tr>
 </table>
-<h1>Default test</h1>
-<h2 id="m1">utils.ExcelDataProvider:test1</h2>
-<table cellspacing="0" cellpadding="0" class="result">
-<tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr>
-<tr class="param stripe"><td>Admin2</td>
-<td>admin1234</td>
-</tr>
-</table>
+<h1>Test</h1>
+<h2 id="m1">listeners.TestNGListenerDemo:test2</h2>
+<div style="padding-left:3em">
+<p>session not created: This version of ChromeDriver only supports Chrome version 100
+Current browser version is 102.0.5005.63 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-3HN3UQ3&apos;, ip: &apos;192.168.1.14&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.2&apos;
+Driver info: driver.version: ChromeDriver
+remote stacktrace: Backtrace:
+	Ordinal0 [0x007B7413+2389011]
+	Ordinal0 [0x00749F61+1941345]
+	Ordinal0 [0x0063C658+837208]
+	Ordinal0 [0x0065C773+968563]
+	Ordinal0 [0x0065837A+951162]
+	Ordinal0 [0x00655C51+941137]
+	Ordinal0 [0x00688C80+1150080]
+	Ordinal0 [0x006888DA+1149146]
+	Ordinal0 [0x00683F66+1130342]
+	Ordinal0 [0x0065E546+976198]
+	Ordinal0 [0x0065F456+980054]
+	GetHandleVerifier [0x00969632+1727522]
+	GetHandleVerifier [0x00A1BA4D+2457661]
+	GetHandleVerifier [0x0084EB81+569713]
+	GetHandleVerifier [0x0084DD76+566118]
+	Ordinal0 [0x00750B2B+1968939]
+	Ordinal0 [0x00755988+1989000]
+	Ordinal0 [0x00755A75+1989237]
+	Ordinal0 [0x0075ECB1+2026673]
+	BaseThreadInitThunk [0x753C6739+25]
+	RtlGetFullPathName_UEx [0x77268FEF+1215]
+	RtlGetFullPathName_UEx [0x77268FBD+1165]
+</p>
+java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+<br/>at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
+<br/>at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+<br/>at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+<br/>at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+<br/>at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$errorHandler$0(W3CHandshakeResponse.java:62)
+<br/>at org.openqa.selenium.remote.HandshakeResponse.lambda$getResponseFunction$0(HandshakeResponse.java:30)
+<br/>at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$0(ProtocolHandshake.java:126)
+<br/>at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+<br/>at java.base/java.util.Spliterators$ArraySpliterator.tryAdvance(Spliterators.java:958)
+<br/>at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:127)
+<br/>at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:502)
+<br/>at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:488)
+<br/>at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+<br/>at java.base/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150)
+<br/>at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+<br/>at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:543)
+<br/>at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:128)
+<br/>at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:74)
+<br/>at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)
+<br/>at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
+<br/>at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:181)
+<br/>at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:168)
+<br/>at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:123)
+<br/>at listeners.TestNGListenerDemo.test2(TestNGListenerDemo.java:26)
+<br/>25 lines not shown
+</div>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m2">utils.ExcelDataProvider:test1</h2>
-<table cellspacing="0" cellpadding="0" class="result">
-<tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr>
-<tr class="param stripe"><td>Admin</td>
-<td>admin123</td>
-</tr>
-</table>
+<h2 id="m2">listeners.TestNGListenerDemo:test3</h2>
+<div style="padding-left:3em">
+<p>This test is skipped</p>
+listeners.TestNGListenerDemo.test3(TestNGListenerDemo.java:36)
+<br/>25 lines not shown
+</div>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m3">utils.ExcelDataProvider:test1</h2>
-<table cellspacing="0" cellpadding="0" class="result">
-<tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr>
-<tr class="param stripe"><td>Admin3</td>
-<td>admin12345</td>
-</tr>
-</table>
+<h2 id="m3">listeners.TestNGListenerDemo2:test6</h2>
+<div style="padding-left:3em">
+<p>This test is skipped</p>
+listeners.TestNGListenerDemo2.test6(TestNGListenerDemo2.java:22)
+<br/>25 lines not shown
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m4">listeners.TestNGListenerDemo:test1</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m5">listeners.TestNGListenerDemo2:test4</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m6">listeners.TestNGListenerDemo2:test5</h2>
 <p class="totop"><a href="#summary">back to summary</a></p>
 </body></html>

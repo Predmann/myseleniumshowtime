@@ -3,12 +3,12 @@
 <suite parallel="none" name="Failed suite [Default suite]">
   <test parallel="none" name="Default test(failed)">
     <classes>
-      <class name="utils.ExcelDataProvider">
+      <class name="listeners.TestNGListenerDemo">
         <methods>
-          <include name="setUpTest"/>
-          <include name="test1"/>
+          <include name="test3"/>
+          <include name="test2"/>
         </methods>
-      </class> <!-- utils.ExcelDataProvider -->
+      </class> <!-- listeners.TestNGListenerDemo -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
