@@ -1,22 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite parallel="none" name="Failed suite [Suite]">
-  <listeners>
-    <listener class-name="listeners.TestNGListeners"/>
-  </listeners>
-  <test parallel="none" name="Test(failed)">
+  <parameter name="browserName" value="chrome"/>
+  <test parallel="none" name="Test1(failed)">
+    <parameter name="browserName" value="chrome"/>
     <classes>
-      <class name="listeners.TestNGListenerDemo">
+      <class name="demo.TestNGMultiBrowserDemo">
         <methods>
-          <include name="test3"/>
-          <include name="test2"/>
+          <include name="setup"/>
+          <include name="test1"/>
         </methods>
-      </class> <!-- listeners.TestNGListenerDemo -->
-      <class name="listeners.TestNGListenerDemo2">
-        <methods>
-          <include name="test6"/>
-        </methods>
-      </class> <!-- listeners.TestNGListenerDemo2 -->
+      </class> <!-- demo.TestNGMultiBrowserDemo -->
     </classes>
-  </test> <!-- Test(failed) -->
+  </test> <!-- Test1(failed) -->
 </suite> <!-- Failed suite [Suite] -->
