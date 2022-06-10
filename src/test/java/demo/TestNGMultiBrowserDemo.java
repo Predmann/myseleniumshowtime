@@ -18,6 +18,7 @@ public class TestNGMultiBrowserDemo {
 	
 	public void setup(String browserName) {
 		System.out.println("Browser name is : " + browserName);
+		System.out.println("Thread id : " +Thread.currentThread().getId());
 
 		if (browserName.equalsIgnoreCase("chrome")) {
 
@@ -27,7 +28,7 @@ public class TestNGMultiBrowserDemo {
 
 		else if (browserName.equalsIgnoreCase("firefox")) {
 
-			System.setProperty("webdriver.chrome.driver", projectPath + "/drivers/geckodriver/geckodriver.exe");
+			System.setProperty("webdriver.gecko.driver", projectPath + "/drivers/geckodriver/geckodriver.exe");
 			driver = new FirefoxDriver();
 
 		}
