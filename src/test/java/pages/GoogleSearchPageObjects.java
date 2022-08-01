@@ -28,7 +28,7 @@ public class GoogleSearchPageObjects {
 	}
 	
 	public void clickSearchButton() {
-		driver.findElement(button_search_).sendKeys(Keys.ENTER);
+		driver.findElement(By.xpath("(//input[@name='btnK'])[2]")).sendKeys(Keys.RETURN);
 		
 	}
 }
