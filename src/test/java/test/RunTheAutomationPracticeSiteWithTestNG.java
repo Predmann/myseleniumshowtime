@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterTest;
@@ -13,8 +14,9 @@ import org.testng.annotations.Test;
 
 import config.PropertiesFile;
 
-public class TestNG_Demo {
+public class RunTheAutomationPracticeSiteWithTestNG {
 	WebDriver driver = null;
+	//here set which browser would you like to use: Chrome or Firefox?
 	public static String browserName = null;
 
 
@@ -33,34 +35,26 @@ public class TestNG_Demo {
 		}
 	}
 	@Test
-	public void googleSearch() {
+	public void startAutomationPractice() throws InterruptedException {
 
-
-
-		//navigate to google.com
-		driver.get("https://www.google.com/");
-
-		//Wait
-		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-
-		//Find the pop-up, click on it to remove it
-		driver.findElement(By.id("L2AGLb")).click();
-		System.out.println("I have found the button and removed it");
-
-		//Wait
-		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-
-		//enter text to the textbox for search
-		driver.findElement(By.name("q")).sendKeys("Onet");
-		System.out.println("Provided send Keys");
-
-		//Wait
-		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-
-		//find search button and click it 
-		//driver.findElement(By.name("btnK")).click();
-		driver.findElement(By.xpath("/html/body/div[1]/div[3]/form/div[1]/div[1]/div[3]/center/input[1]")).sendKeys(Keys.ENTER);
-		System.out.println("Button is clicked");
+		//Navigate to wanted page
+		driver.get("http://automationpractice.com/index.php");
+		
+		//Wait a little bit. I know that is not correct but I needed it for now. 
+		//Will be removed soon due to using implicityWaits
+		Thread.sleep(3000);
+		
+		//Find textBox and searchButton	
+		WebElement textBox = driver.findElement(By.id("search_query_top"));
+		WebElement searchButton = driver.findElement(By.name("submit_search"));
+		
+		//Type the text on the textBox and click on the searchButton
+		textBox.sendKeys("faded");
+		searchButton.click();
+				
+		//Little pause
+		Thread.sleep(3000);
+		System.out.println("done");
 
 	}
 	@AfterTest
@@ -68,7 +62,6 @@ public class TestNG_Demo {
 		driver.close();
 		driver.quit();
 		System.out.println("Closing...");
-
 		System.out.println("Test is now completed successfully");
 
 	}

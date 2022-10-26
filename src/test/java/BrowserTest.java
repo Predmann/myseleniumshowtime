@@ -16,24 +16,25 @@ public class BrowserTest {
 	
 	//WebDriver driver = new FirefoxDriver();
 	WebDriver driver = new ChromeDriver();
-	
+		
 	//Navigate to wanted page
-	driver.get("http://google.com/");
+	driver.get("http://automationpractice.com/index.php");
 	
 	//Wait a little bit. I know that is not correct but I needed it for now. 
-	//Will be removed soon
+	//Will be removed soon due to using implicityWaits
 	Thread.sleep(3000);
 	
-	//Find the pop-up, click on it to remove it
-	driver.findElement(By.id("L2AGLb")).click();
-	System.out.println("I have found the button and removed it");
+	//Find textBox and searchButton	
+	WebElement textBox = driver.findElement(By.id("search_query_top"));
+	WebElement searchButton = driver.findElement(By.name("submit_search"));
 	
-	//Find another element and send keys	
-	WebElement textBox = driver.findElement(By.id("lst-ib"));
-	textBox.sendKeys("Raz dwa trzy");
-	
+	//Type the text on the textBox and click on the searchButton
+	textBox.sendKeys("faded");
+	searchButton.click();
+			
 	//Little pause
 	Thread.sleep(3000);
+	System.out.println("done");
 	
 }
 }

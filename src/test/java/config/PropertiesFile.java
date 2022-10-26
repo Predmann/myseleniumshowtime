@@ -6,7 +6,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Properties;
 
-import test.TestNG_Demo;
+import test.RunTheAutomationPracticeSiteWithTestNG;
 
 public class PropertiesFile {
 
@@ -27,7 +27,7 @@ public class PropertiesFile {
 			prop.load(input);
 			String browser = prop.getProperty("browser");
 			System.out.println(browser);
-			TestNG_Demo.browserName=prop.getProperty("browser");
+			RunTheAutomationPracticeSiteWithTestNG.browserName=prop.getProperty("browser");
 		}
 		catch(Exception exp) {
 			System.out.println(exp.getMessage());
